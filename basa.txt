@@ -1,0 +1,107 @@
+база данных-это хранилище информации
+субд система управления баз данных это система при помощи которой мржно удалять создавать редактировать 
+реоляционные-где данные хранятся в виде таблиц есть связи
+нереолиционные где данные хранятся в виде коллекции
+
+
+
+
+
+"команды"
+\c -показывает к какой базе данных мы подключены
+\c- database_name-подключение к базе данных  database_name
+\l-показывает список баз данных
+\dt - показывает список таблиц текущей базе данных
+\d+ -покажет подробную информацию о таблицах
+\d+ user - покажет подробную информацию о таблиуе  user
+\du - показывает список юзеров с правами 
+\q - выход из субд
+
+
+
+
+сырые запросы 
+
+CREATE  DATABASE name_db;создание базы данных   name_db
+CREATE TABLE name_table(column1 data_type1,column2 data_type2);
+создание таблицы name_table  с полями column1,column2
+
+DROP TABLE name_table;-удаление таблицы name_table
+
+"заполнение таблиц"
+INSERT INTO name_table VALUES
+(katana,ygy@gmail.com,buvt7655);
+
+
+
+
+
+SELECT*FROM name_table;-показывает все данные которые хранятс в таблице name_table
+DELETE FROM name_table;-удаление данных из таблицы name_table
+
+
+UPDATE name_table SET col=new_val; обновление всех записей под полем col   на new_val
+
+
+
+UPDATE name_table SET col=new_val WHERE id<1;
+обновление записей в нескольких обьектах в данном случаях тех обьектов у которых id  меньше 10
+
+
+
+условия
+DELETE FROM name_db  WHERE column1=value1;
+удаляю все записи по условию
+
+SELECT * FROM name_table WHERE title like '%world%'покажет все записи у которых title содержит слово world  
+like чуствительный к регистру World  не найдет 
+SELECT *FROM name_table WHERE title ilike '%WoRls%'
+%  - символ который показывает где могут быть другие слова 
+ilike- нечуствительный  к регистру
+
+
+SELECT *FROM name_table ORDER BY column1;
+сортировака по определенному полю по возрастнаию ASK;
+SELECT *FROM name_table ORDER BY column1 column1 DESK;
+сортировка  по определенному полю по убыванию 
+
+SELECT *FROM name_table LIMIT 10;
+выводит первые 10 записей 
+SELECT *FROM name_table  OFFSET 10;
+выволит все записи пропустив первые 10 записей
+
+
+SELECT *FROM name_table LIMIT 20 OFFSET 10;
+пропускаются первые 10
+выводятся следующие 20
+
+add
+ALTER TABLE name_table ADD COLUMN new_column_name type;
+LTER TABLE post ADD COLUMN title VARCHAR(50);
+
+drop
+ALTER TABLE name_table DROP COLUMN column_name;
+ALTER TABLE post ADD COLUMN title VARCHAR(50);
+
+ALTER TABLE name_table ALTER COLUMN old_column_name TO new_column_name;
+
+ALTER TABLE name_table ALTER COLUMN name_column TYPE data_type;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
